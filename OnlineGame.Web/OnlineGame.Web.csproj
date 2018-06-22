@@ -97,27 +97,66 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Models\OnlineGameDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>OnlineGameDataModel.Context.cs</LastGenOutput>
+      <DependentUpon>OnlineGameDataModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Models\OnlineGameDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OnlineGameDataModel.edmx</DependentUpon>
+      <LastGenOutput>OnlineGameDataModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
+    <Content Include="Views\Gamers\HtmlHelpers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GamersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gamer.cs">
+      <DependentUpon>OnlineGameDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gamers\Game.cs" />
+    <Compile Include="Models\MultipleSelect.cs">
+      <DependentUpon>OnlineGameDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\OnlineGameDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>OnlineGameDataModel.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\OnlineGameDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OnlineGameDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\OnlineGameDataModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>OnlineGameDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SingleSelect.cs">
+      <DependentUpon>OnlineGameDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\spGetGamers_Result.cs">
+      <DependentUpon>OnlineGameDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Team.cs">
+      <DependentUpon>OnlineGameDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -127,10 +166,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>OnlineGameDataModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Models\OnlineGameDataModel.edmx.diagram">
+    <Content Include="Models\OnlineGameDataModel.edmx.diagram">
       <DependentUpon>OnlineGameDataModel.edmx</DependentUpon>
-    </None>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Gamers\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -140,7 +186,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
