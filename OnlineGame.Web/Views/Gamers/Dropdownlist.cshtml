@@ -1,0 +1,18 @@
+﻿@using System.Collections.Generic
+@{
+    ViewBag.Title = "Dropdownlist";
+}
+<h2>Dropdownlist</h2>
+@Html.DropDownList("Teams", new List<SelectListItem>
+{
+    new SelectListItem { Text = "Team1", Value = "1", Selected=true},
+    new SelectListItem { Text = "Team2", Value = "2"},
+    new SelectListItem { Text = "Team3", Value = "3"}
+}, "Select Team")
+<br />
+@Html.DropDownList("TeamId1", "Select Team")
+<br />
+@Html.DropDownList("TeamId2", "Select Team")
+<br />
+@Html.DropDownList("selectListItems1", "Select singleList Item")
+<br />

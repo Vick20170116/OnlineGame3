@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "HtmlHelpers";
+}
+<h2>HtmlHelpers</h2>
+@Html.TextBox("Name")
+<br />
+@Html.TextBox("Name2", "Name2Value")
+<br />
+@Html.TextBox("Name3", "Name3Value", new { style = "background-color:Gray; color:White; font-weight:bold", title = "Please enter Name3Value" })
+<br />
+@Html.TextBox("Name4", "Name4Value", new { @class = "ClassStyle", @readonly = "true" })
+<br />
+@Html.Label("LastName", "Last Name")
+<br />
+@Html.Password("Password")
+<br />
+@Html.TextArea("Note", "", 10, 20, null)
+<br />
+@Html.Hidden("Id")
