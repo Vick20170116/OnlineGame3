@@ -21,56 +21,56 @@ namespace OnlineGame.Web.Controllers
         {
             return View();
         }
-        //[HttpGet]
-        //public async Task<ActionResult> Dropdownlist()
-        //{
-        //    //Use the collection of teams as the parameter to create SelectList
-        //    //which value is Team Id and the text is Team Name.
-        //    //ViewBag.TeamId will bind this SelectList to View Model control components, TeamId1 and TeamId2.
-        //    ViewBag.TeamId1 = new SelectList(await _dbContext.Teams.ToListAsync(), "Id", "Name");
-        //    ViewBag.TeamId2 = new SelectList(await _dbContext.Teams.ToListAsync(), "Id", "Name", 2);
-        //    List<SelectListItem> selectListItems = new List<SelectListItem>();
-        //    foreach (SingleSelect singleSelectItem in await _dbContext.SingleSelects.ToListAsync())
-        //    {
-        //        SelectListItem selectListItem = new SelectListItem
-        //        {
-        //            Text = singleSelectItem.Name,
-        //            Value = singleSelectItem.Id.ToString(),
-        //            Selected = singleSelectItem.IsSelected
-        //        };
-        //        selectListItems.Add(selectListItem);
-        //    }
-        //    ViewBag.selectListItems1 = selectListItems;
-        //    return View();
-        //}
-        //[HttpGet]
-        //public ActionResult TextBox()
-        //{
-        //    Game game = new Game("GameA");
-        //    ViewBag.GameName = game.Name;
-        //    ViewBag.GameTeams = new SelectList(game.Teams, "Id", "Name");
-        //    return View();
-        //}
-        //[HttpGet]
-        //public ActionResult TextBoxFor()
-        //{
-        //    Game game = new Game("GameA");
-        //    return View(game);
-        //}
-        //[HttpGet]
-        //public ActionResult Radiobuttonlist()
-        //{
-        //    Game game = new Game("GameA");
-        //    return View(game);
-        //}
-        //[HttpPost]
-        //public string Radiobuttonlist(Game game)
-        //{
-        //    return string.IsNullOrEmpty(game.SelectedItemId)
-        //        ? "Nothing is selected"
-        //        : $"Selected Id == {game.SelectedItemId}";
-        //    //return RedirectToAction("Index");
-        //}
+        [HttpGet]
+        public async Task<ActionResult> Dropdownlist()
+        {
+            //Use the collection of teams as the parameter to create SelectList
+            //which value is Team Id and the text is Team Name.
+            //ViewBag.TeamId will bind this SelectList to View Model control components, TeamId1 and TeamId2.
+            ViewBag.TeamId1 = new SelectList(await _dbContext.Teams.ToListAsync(), "Id", "Name");
+            ViewBag.TeamId2 = new SelectList(await _dbContext.Teams.ToListAsync(), "Id", "Name", 2);
+            List<SelectListItem> selectListItems = new List<SelectListItem>();
+            foreach (SingleSelect singleSelectItem in await _dbContext.SingleSelects.ToListAsync())
+            {
+                SelectListItem selectListItem = new SelectListItem
+                {
+                    Text = singleSelectItem.Name,
+                    Value = singleSelectItem.Id.ToString(),
+                    Selected = singleSelectItem.IsSelected
+                };
+                selectListItems.Add(selectListItem);
+            }
+            ViewBag.selectListItems1 = selectListItems;
+            return View();
+        }
+        [HttpGet]
+        public ActionResult TextBox()
+        {
+            Game game = new Game("GameA");
+            ViewBag.GameName = game.Name;
+            ViewBag.GameTeams = new SelectList(game.Teams, "Id", "Name");
+            return View();
+        }
+        [HttpGet]
+        public ActionResult TextBoxFor()
+        {
+            Game game = new Game("GameA");
+            return View(game);
+        }
+        [HttpGet]
+        public ActionResult Radiobuttonlist()
+        {
+            Game game = new Game("GameA");
+            return View(game);
+        }
+        [HttpPost]
+        public string Radiobuttonlist(Game game)
+        {
+            return string.IsNullOrEmpty(game.SelectedItemId)
+                ? "Nothing is selected"
+                : $"Selected Id == {game.SelectedItemId}";
+            //return RedirectToAction("Index");
+        }
         //[HttpGet]
         //public async Task<ActionResult> CheckBoxList()
         //{
