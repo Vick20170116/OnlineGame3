@@ -1,5 +1,5 @@
 ﻿@using OnlineGame.Web.Models
-@model OnlineGame.Web.Models.Game
+@model Game
 
 @{
     ViewBag.Title = "Radiobuttonlist";
@@ -11,7 +11,7 @@
 {
     foreach (SingleSelect item in Model.SingleSelectItems)
     {
-        @(item.IsSelected ?
+        @(item.IsSelected?
               Html.RadioButtonFor(model => model.SelectedItemId, item.Id, new {@checked = "checked"}) :
               Html.RadioButtonFor(model => model.SelectedItemId, item.Id))
         @*@Html.RadioButtonFor(model => model.SelectedItemId, item.Id)*@

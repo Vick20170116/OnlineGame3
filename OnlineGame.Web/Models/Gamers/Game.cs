@@ -34,7 +34,7 @@ namespace OnlineGame.Web.Models
                     //Get List
                     List<SingleSelect> singleSelectItems = db.SingleSelects.ToListAsync().Result;
                     //Set Property
-                    SelectedItem = SingleSelectItems.Single(item => item.IsSelected);
+                    SelectedItem = singleSelectItems.Single(item => item.IsSelected);
                     //Return List
                     return singleSelectItems;
                 }
